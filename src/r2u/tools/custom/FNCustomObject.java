@@ -19,7 +19,7 @@ public class FNCustomObject {
                                      ObjectStore objectStoreDestination,
                                      HashMap<String, Boolean> customObjectMap) {
         if (docClass.equalsIgnoreCase("CustomObject")) {
-            Iterator iterator = fetchRows(docClass, objectStoreSource);
+            Iterator<?> iterator = fetchRows(docClass, objectStoreSource);
             //Scorreggio ogni record presente nella Generic
             while (iterator.hasNext()) {
                 RepositoryRow repositoryRow = (RepositoryRow) iterator.next();
@@ -88,7 +88,7 @@ public class FNCustomObject {
         }
     }
 
-    private static Iterator fetchRows(String docClass, ObjectStore objectStoreSource) {
+    private static Iterator<?> fetchRows(String docClass, ObjectStore objectStoreSource) {
         String querySource = "SELECT * FROM " + docClass;
         SearchSQL searchSQL = new SearchSQL();
         searchSQL.setQueryString(querySource);
