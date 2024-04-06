@@ -1,27 +1,13 @@
-# FileNetObjExporterImporter by MrArni_ZIO
+# FileNetObjExporterImporter ver1.1 by MrArni_ZIO - Released
 ### Description
-Tool per export ed import delle classi documentali fra gli ambienti,
+Tool per export e import delle classi documentali fra gli ambienti,
 sviluppato per necessita di rimettere in piedi lo sviluppo.
-Attualmente bisogna passarli un file json strutturato in questo modo:<br>
-`{
-"sourceCPE": "http://xxx:000/wsi/FNCEWS40MTOM/",
-"sourceCPEObjectStore": "xxx",
-"destinationCPE": "http://yyy:000/wsi/FNCEWS40MTOM/",
-"destinationCPEObjectStore": "yyy",
-"sourceCPEUsername": "xxx",
-"sourceCPEPassword": "xxx",
-"destinationCPEUsername": "yyy",
-"destinationCPEPassword": "yyy",
-"documentClass": "Document,CustomObject",
-"objectClasses": [
-{
-"CustomObject": [
-"customobject=true"
-],
-"Document": [
-"document=true"]}]}`
 <br>
-Se si vuole disabilitare una classe documentale dal censimento, basta scegliere quella classe ed impostarla a false.
-### Usage
-`java -jar config.json`.<br>
+Se si vuole disabilitare una classe documentale dal censimento, basta scegliere quella classe e impostarla a false.
+### CustomObject/Document/Folder
+Nel file `config.json` troverete delle configurazioni da fare, inserire i dati necessari e nei campi intestati sopra, 
+riempire con elenco delle classi documentali in questo modo: `myDocumentClass=true`, il `true/false` è un flag di controllo,
+cosicché il tool capisce se bisogna sudare o no.
+### _Usage_
+`java -jar path\filename.jar path\config.json`.<br>
 Per qualsiasi bug, feature request - non esitate a chiamarmi, messagarmi.
